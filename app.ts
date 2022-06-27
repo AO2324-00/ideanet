@@ -29,7 +29,7 @@ System.createRoute("アイデアのページ").URL("/q", "/q/:q")
 async function setupDatabase(conf: Config) {
     const client = new MongoClient();
     await client.connect({
-        db: conf.DB.name,
+        db:  conf.DB.name,
         tls: true,
         servers: [{
                 host: conf.DB.host,
@@ -37,7 +37,7 @@ async function setupDatabase(conf: Config) {
         }],
         credential: {
             username:   conf.DB.user,
-            password: String(conf.DB.password),
+            password:   String(conf.DB.password),
             db:         conf.DB.name,
             mechanism: "SCRAM-SHA-1",
         },
